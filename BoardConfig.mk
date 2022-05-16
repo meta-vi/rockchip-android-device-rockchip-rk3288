@@ -24,11 +24,6 @@ TARGET_CPU_ABI2 := armeabi
 ENABLE_CPUSETS := true
 TARGET_CPU_SMP := true
 
-CURRENT_SDK_VERSION := RK3288_ANDROID11.0_MID_V1.0
-
-TARGET_PREBUILT_KERNEL := kernel/arch/arm/boot/zImage
-BOARD_PREBUILT_DTBIMAGE_DIR := kernel/arch/arm/boot/dts
-
 PRODUCT_UBOOT_CONFIG ?= rk3288
 PRODUCT_KERNEL_ARCH ?= arm
 PRODUCT_KERNEL_DTS ?= rk3288-evb-android-rk808-edp-avb
@@ -116,7 +111,6 @@ MALLOC_SVELTE := true
 BOARD_SUPPORT_HEVC := true
 BOARD_SUPPORT_VP9 := false
 BOARD_SUPPORT_VP6 := false
-BOARD_MEMTRACK_SUPPORT := true
 
 #for camera autofocus support
 CAMERA_SUPPORT_AUTOFOCUS=true

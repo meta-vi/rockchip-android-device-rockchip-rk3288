@@ -14,6 +14,9 @@
 # limitations under the License.
 #
 
+# Set system properties identifying the chipset
+PRODUCT_VENDOR_PROPERTIES += ro.soc.model=RK3288
+
 PRODUCT_PACKAGES += \
     WallpaperPicker \
     Launcher3
@@ -86,14 +89,6 @@ $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-he
 
 $(call inherit-product-if-exists, vendor/rockchip/$(TARGET_BOARD_PLATFORM)/device-vendor.mk)
 
-# For enable optee support
-ifeq ($(strip $(PRODUCT_HAVE_OPTEE)), true)
-PRODUCT_COPY_FILES += \
-       device/rockchip/common/init.optee_verify.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.optee.rc
-
-# Choose TEE storage type
-PRODUCT_PROPERTY_OVERRIDES += ro.tee.storage=rkss
-endif
 
 PRODUCT_COPY_FILES += \
     device/rockchip/rk3288/public.libraries.txt:vendor/etc/public.libraries.txt
@@ -169,7 +164,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
                 wifi.supplicant_scan_interval=15 \
                 ro.factory.tool=0 \
                 ro.kernel.android.checkjni=0 \
-                ro.sf.lcd_density=320 \
                 ro.build.shutdown_timeout=6 \
                 persist.enable_task_snapshots=false \
                 ro.adb.secure=0 \
