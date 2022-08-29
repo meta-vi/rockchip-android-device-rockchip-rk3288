@@ -127,8 +127,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += ro.boot.copy_oem=true
 endif
 
-BOARD_SEPOLICY_DIRS += device/rockchip/rk3288/sepolicy_vendor
-
 #
 # add Rockchip properties here
 #
